@@ -1,0 +1,15 @@
+GEM
+  remote: https://rubygems.org/
+  specs:
+    nurse-rb (1.0.0)
+    rack (2.0.1)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  nurse-rb
+  rack
+
+BUNDLED WITH
+   1.13.6
