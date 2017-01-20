@@ -8,7 +8,7 @@ class Debugger
     @env = env
     @data = {
       application_user: application_user,
-      ruby: "#{RUBY_VERSION}p#{RUBY_PATCHLEVEL} - #{RUBY_PLATFORM} - RUBY_RELEASE_DATE",
+      ruby: "#{RUBY_VERSION}p#{RUBY_PATCHLEVEL} - #{RUBY_PLATFORM} - #{RUBY_RELEASE_DATE}",
       paths: $:,
       env: env,
     }
