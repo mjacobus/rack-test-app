@@ -17,7 +17,7 @@ class Debugger
   def application_user
     application_user = system('whoami')
     application_user ||= `whoami` rescue nil
-    application_user.gsub("\n", '').to_s
+    application_user.to_s.gsub("\n", '')
   end
 
   def to_json
