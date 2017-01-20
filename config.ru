@@ -2,15 +2,22 @@ require 'rack'
 require 'json'
 require 'nurse'
 
+
 class Debugger
   def initialize(env)
     @env = env
     @data = {
-      application_user: `whoami`.gsub("\n", '').to_s,
+      application_user: application_user,
       ruby: "#{RUBY_VERSION}p#{RUBY_PATCHLEVEL} - #{RUBY_PLATFORM} - RUBY_RELEASE_DATE",
       paths: $:,
       env: env,
     }
+  end
+
+  def application_user
+    application_user = system('whoami')
+    application_user ||= `whoami` rescue nil
+    application_user.gsub("\n", '').to_s
   end
 
   def to_json
