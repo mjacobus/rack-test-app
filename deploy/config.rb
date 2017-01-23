@@ -8,7 +8,8 @@ set :repo_url, 'git@github.com:mjacobus/rack-test-app.git'
 ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
 
 # Default deploy_to directory is /var/www/my_app_name
-set :deploy_to, "/var/www/#{fetch(:application)}"
+set :deploy_to, "/var/www/apps/#{fetch(:application)}"
+set :chruby_ruby, 'ruby-2.4.0'
 
 # Default value for :scm is :git
 # set :scm, :git
