@@ -37,7 +37,7 @@ set :chruby_ruby, 'ruby-2.4.0'
 
 namespace :deploy do
 
-  after :restart, :clear_cache do
+  task :restart do
     on roles(:web), in: :groups, limit: 3, wait: 10 do
       # Here we can do anything such as:
       within release_path do
@@ -46,4 +46,5 @@ namespace :deploy do
     end
   end
 
+  after :publishing, :restart
 end
