@@ -7,6 +7,7 @@ class Debugger
   def initialize(env)
     @env = env
     @data = {
+      newly_deployed: 'yes',
       application_user: application_user,
       ruby: "#{RUBY_VERSION}p#{RUBY_PATCHLEVEL} - #{RUBY_PLATFORM} - #{RUBY_RELEASE_DATE}",
       paths: $:,
